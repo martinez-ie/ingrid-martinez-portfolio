@@ -1048,11 +1048,12 @@
             <nav class="navbar">
                 <a href="#" class="logo"><i class="fas fa-chart-line"></i> Ingrid Martinez</a>
                 <ul class="nav-links">
-                    <li><a href="#home" class="active">Início</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#experience">Experiência</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <!-- Adicionei data-i18n para cada item do menu -->
+                    <li><a href="#home" class="active" data-i18n="menu.home">Início</a></li>
+                    <li><a href="#skills" data-i18n="menu.skills">Habilidades</a></li>
+                    <li><a href="#projects" data-i18n="menu.projects">Projetos</a></li>
+                    <li><a href="#experience" data-i18n="menu.experience">Experiência</a></li>
+                    <li><a href="#contact" data-i18n="menu.contact">Contato</a></li>
                     <li class="language-switcher">
                         <button class="lang-btn active" data-lang="pt-BR">BR</button>
                         <button class="lang-btn" data-lang="en">EN</button>
@@ -1526,6 +1527,13 @@
         // Sistema de internacionalização
         const translations = {
             'pt-BR': {
+                // Traduções do menu
+                'menu.home': 'Início',
+                'menu.skills': 'Habilidades',
+                'menu.projects': 'Projetos',
+                'menu.experience': 'Experiência',
+                'menu.contact': 'Contato',
+                
                 // Hero Section
                 'hero.title': 'Olá, eu sou <span>Ingrid Martinez</span>',
                 'hero.subtitle': 'Formada em Administração de Empresas pela Universidade Salvador, com mais de 10 anos de experiência em Vendas e Atendimento. Atualmente em transição para a área de Ciência de Dados, onde aplico habilidades em Python, SQL e Power BI para transformar dados em soluções reais. Moro na Irlanda desde 2023, com propósito, curiosidade e paixão por tecnologia.',
@@ -1635,6 +1643,13 @@
                 'cv.download': 'Baixar CV'
             },
             'en': {
+                // Traduções do menu para inglês
+                'menu.home': 'Home',
+                'menu.skills': 'Skills',
+                'menu.projects': 'Projects',
+                'menu.experience': 'Experience',
+                'menu.contact': 'Contact',
+                
                 // Hero Section
                 'hero.title': 'Hello, I\'m <span>Ingrid Martinez</span>',
                 'hero.subtitle': 'Graduated in Business Administration from Universidade Salvador, with over 10 years of experience in Sales and Customer Service. Currently transitioning to Data Science, where I apply skills in Python, SQL, and Power BI to transform data into real solutions. Living in Ireland since 2023, with purpose, curiosity, and passion for technology.',
