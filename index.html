@@ -8,17 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4a6cf7;
-            --primary-dark: #3a56d4;
-            --secondary-color: #6c63ff;
-            --accent-color: #8b5cf6;
-            --dark-color: #1e293b;
-            --light-color: #f8fafc;
-            --gray-light: #e2e8f0;
-            --gray-medium: #94a3b8;
-            --gray-dark: #64748b;
-            --transition: all 0.3s ease;
-            --box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #0f172a;
+            --accent-color: #38bdf8;
+            --dark-color: #020617;
+            --light-color: #f9fafb;
+            --gray-light: #e5e7eb;
+            --gray-medium: #9ca3af;
+            --gray-dark: #4b5563;
+            --transition: all 0.25s ease;
+            --box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+            --box-shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.06);
         }
 
         * {
@@ -33,7 +34,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
             color: var(--dark-color);
             line-height: 1.6;
             overflow-x: hidden;
@@ -57,70 +58,68 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
+            font-size: 2.3rem;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
             position: relative;
         }
 
         .section-title:after {
             content: '';
             display: block;
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: var(--primary-color);
             margin: 15px auto 30px;
-            border-radius: 2px;
+            border-radius: 999px;
         }
 
         .section-subtitle {
             text-align: center;
-            color: var(--gray-medium);
+            color: var(--gray-dark);
             max-width: 700px;
-            margin: 0 auto 60px;
-            font-size: 1.1rem;
+            margin: 0 auto 50px;
+            font-size: 1.02rem;
         }
 
         /* Header */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: var(--box-shadow);
+            background-color: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 1px 8px rgba(15, 23, 42, 0.06);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             transition: var(--transition);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         .header-scrolled {
-            padding: 10px 0;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.10);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 14px 0;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--secondary-color);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: var(--transition);
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .logo i {
-            color: var(--accent-color);
+            color: var(--primary-color);
+            font-size: 1.2rem;
         }
 
         .nav-links {
@@ -130,22 +129,25 @@
         }
 
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 26px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-color);
+            color: var(--gray-dark);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
-            padding: 5px 0;
+            padding: 4px 0;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
 
         .nav-links a:after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -4px;
             left: 0;
             width: 0;
             height: 2px;
@@ -160,40 +162,45 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--primary-color);
+            color: var(--secondary-color);
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--dark-color);
+            color: var(--secondary-color);
         }
 
         .language-switcher {
-            margin-left: 20px;
+            margin-left: 18px;
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .lang-btn {
             background: none;
-            border: none;
-            color: var(--dark-color);
+            border: 1px solid transparent;
+            color: var(--gray-dark);
             font-weight: 600;
             cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 5px 9px;
+            border-radius: 999px;
             transition: var(--transition);
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .lang-btn:hover {
-            background-color: var(--gray-light);
+            border-color: var(--gray-light);
+            background-color: #f3f4f6;
         }
 
         .lang-btn.active {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: white;
+            border-color: var(--secondary-color);
         }
 
         /* Hero Section */
@@ -201,7 +208,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
+            padding-top: 90px;
             position: relative;
             overflow: hidden;
         }
@@ -216,14 +223,45 @@
         }
 
         .hero-text {
-            flex: 1;
-            animation: fadeInUp 1s ease;
+            flex: 1.1;
+            animation: fadeInUp 0.9s ease;
+        }
+
+        .hero-title {
+            font-size: 2.7rem;
+            margin-bottom: 10px;
+            line-height: 1.15;
+            color: var(--secondary-color);
+        }
+
+        .hero-title span {
+            color: var(--primary-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-dark);
+            max-width: 640px;
+            margin-top: 18px;
+        }
+
+        .hero-subtitle strong {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(32px);
             }
             to {
                 opacity: 1;
@@ -231,118 +269,210 @@
             }
         }
 
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-text h1 span {
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .hero-text h1 span:after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background-color: rgba(74, 108, 247, 0.2);
-            z-index: -1;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--gray-dark);
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
         .btn {
             display: inline-flex;
             align-items: center;
-            padding: 14px 32px;
+            padding: 12px 26px;
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 999px;
             font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
-            gap: 10px;
-            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+            font-size: 0.95rem;
+            gap: 8px;
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+            white-space: nowrap;
         }
 
         .btn:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(74, 108, 247, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(37, 99, 235, 0.40);
         }
 
         .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            margin-left: 15px;
+            background: white;
+            border: 1px solid var(--gray-light);
+            color: var(--secondary-color);
+            box-shadow: var(--box-shadow-soft);
         }
 
         .btn-outline:hover {
-            background: var(--primary-color);
+            background: var(--secondary-color);
             color: white;
+            border-color: var(--secondary-color);
         }
 
         .hero-image {
-            flex: 1;
-            text-align: center;
-            animation: float 4s ease-in-out infinite;
-            position: relative;
+            flex: 0.9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .profile-img {
-            width: 100%;
-            max-width: 450px;
+        .hero-card {
+            background: radial-gradient(circle at top left, rgba(37,99,235,0.15), transparent 55%),
+                        radial-gradient(circle at bottom right, rgba(56,189,248,0.18), transparent 55%),
+                        #0b1120;
             border-radius: 20px;
-            box-shadow: var(--box-shadow);
-            border: 5px solid white;
-            transition: var(--transition);
+            padding: 22px 22px 26px;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+            max-width: 420px;
+            width: 100%;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            color: #e5e7eb;
         }
 
-        .hero-image:hover .profile-img {
-            transform: scale(1.03);
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .hero-pill {
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.7);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #e5e7eb;
+        }
+
+        .hero-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .hero-tag {
+            font-size: 0.78rem;
+            color: #9ca3af;
+        }
+
+        .hero-window {
+            background: rgba(15,23,42,0.85);
+            border-radius: 14px;
+            padding: 14px 16px 16px;
+            border: 1px solid rgba(31,41,55,0.9);
+        }
+
+        .hero-window-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.78rem;
+            color: #9ca3af;
+        }
+
+        .hero-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .hero-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .hero-dots span:nth-child(1) { background: #f97373; }
+        .hero-dots span:nth-child(2) { background: #facc15; }
+        .hero-dots span:nth-child(3) { background: #4ade80; }
+
+        .hero-window-body {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .hero-code {
+            font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.75rem;
+            color: #e5e7eb;
+            line-height: 1.5;
+        }
+
+        .hero-code span.keyword { color: #38bdf8; }
+        .hero-code span.func { color: #a5b4fc; }
+        .hero-code span.string { color: #facc15; }
+        .hero-code span.comment { color: #6b7280; }
+
+        .hero-chart {
+            background: radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 60%);
+            border-radius: 12px;
+            padding: 10px 12px;
+            border: 1px solid rgba(148,163,184,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .hero-chart-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 70px;
+        }
+
+        .hero-bar {
+            flex: 1;
+            border-radius: 999px 999px 4px 4px;
+            background: linear-gradient(to top, rgba(37,99,235,0.9), rgba(59,130,246,0.4));
+        }
+
+        .hero-bar:nth-child(2) {
+            height: 60%;
+            opacity: 0.6;
+        }
+
+        .hero-bar:nth-child(3) {
+            height: 85%;
+        }
+
+        .hero-bar:nth-child(4) {
+            height: 45%;
+            opacity: 0.55;
+        }
+
+        .hero-chart-caption {
+            font-size: 0.7rem;
+            color: #9ca3af;
         }
 
         .scroll-down {
             position: absolute;
-            bottom: 40px;
+            bottom: 38px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: var(--dark-color);
+            color: var(--gray-dark);
             text-decoration: none;
             animation: bounce 2s infinite;
+            font-size: 0.85rem;
         }
 
-        .scroll-down span {
-            margin-top: 10px;
-            font-size: 0.9rem;
+        .scroll-down i {
+            margin-bottom: 4px;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-15px);}
-            60% {transform: translateY(-10px);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-6px);}
         }
 
         /* Skills Section */
@@ -357,7 +487,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px;
+            height: 90px;
             background: linear-gradient(to top, rgba(255,255,255,0) 0%, white 100%);
             z-index: 1;
         }
@@ -365,14 +495,14 @@
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            gap: 18px;
             max-width: 800px;
             margin: 0 auto;
         }
 
         .skill-card {
             background-color: var(--light-color);
-            padding: 25px 15px;
+            padding: 22px 14px;
             border-radius: 12px;
             text-align: center;
             transition: var(--transition);
@@ -385,51 +515,25 @@
             justify-content: center;
         }
 
-        .skill-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: linear-gradient(to bottom, rgba(74, 108, 247, 0.1), rgba(74, 108, 247, 0.05));
-            transition: var(--transition);
-            z-index: 0;
-        }
-
-        .skill-card:hover:before {
-            height: 100%;
-        }
-
         .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow);
+            transform: translateY(-6px);
+            box-shadow: var(--box-shadow-soft);
             border-color: transparent;
         }
 
         .skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-
-        .skill-card:hover .skill-icon {
-            transform: scale(1.1);
-            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
         }
 
         .skill-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.02rem;
             margin-bottom: 0;
-            position: relative;
-            z-index: 1;
         }
 
         /* Projects Section */
         .projects {
-            background-color: #f1f5f9;
+            background-color: #f3f4f6;
             position: relative;
         }
 
@@ -439,8 +543,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            background: linear-gradient(to top, rgba(241, 245, 249, 0) 0%, #f1f5f9 100%);
+            height: 90px;
+            background: linear-gradient(to top, rgba(243,244,246,0) 0%, #f3f4f6 100%);
             z-index: 1;
         }
 
@@ -448,116 +552,92 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
         .filter-btn {
-            padding: 8px 20px;
-            background-color: #dbeafe;
-            color: var(--primary-color);
+            padding: 7px 18px;
+            background-color: #e5e7eb;
+            color: var(--secondary-color);
             border: none;
-            border-radius: 30px;
+            border-radius: 999px;
             font-weight: 500;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .filter-btn:hover, .filter-btn.active {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: white;
         }
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
         }
 
         .project-card {
             background-color: white;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: var(--box-shadow-soft);
             transition: var(--transition);
             position: relative;
-        }
-
-        .project-card:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(74, 108, 247, 0), rgba(74, 108, 247, 0.1));
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 1;
-        }
-
-        .project-card:hover:after {
-            opacity: 1;
+            border: 1px solid #e5e7eb;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: var(--box-shadow);
+            border-color: transparent;
         }
 
         .project-img {
             width: 100%;
-            height: 250px;
+            height: 230px;
             object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-img {
-            transform: scale(1.05);
         }
 
         .project-content {
-            padding: 25px;
+            padding: 22px;
             position: relative;
             z-index: 2;
         }
 
         .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
         }
 
         .project-description {
             color: var(--gray-dark);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
         .tag {
-            background-color: #dbeafe;
-            color: var(--primary-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            background-color: #e5e7eb;
+            color: var(--secondary-color);
+            padding: 5px 11px;
+            border-radius: 999px;
+            font-size: 0.8rem;
             font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .tag:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
         }
 
         .project-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
 
         .project-links a {
@@ -568,11 +648,12 @@
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .project-links a:hover {
             color: var(--primary-dark);
-            transform: translateX(5px);
+            transform: translateX(4px);
         }
 
         /* Experience Section */
@@ -587,7 +668,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px;
+            height: 90px;
             background: linear-gradient(to top, rgba(255,255,255,0) 0%, white 100%);
             z-index: 1;
         }
@@ -601,16 +682,16 @@
         .timeline::after {
             content: '';
             position: absolute;
-            width: 4px;
+            width: 3px;
             background-color: var(--gray-light);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -2px;
+            margin-left: -1.5px;
         }
 
         .timeline-item {
-            padding: 20px 40px;
+            padding: 18px 40px;
             position: relative;
             width: 50%;
             box-sizing: border-box;
@@ -627,77 +708,79 @@
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background-color: white;
-            border: 4px solid var(--primary-color);
+            border: 3px solid var(--primary-color);
             border-radius: 50%;
-            top: 30px;
+            top: 28px;
             z-index: 1;
         }
 
         .timeline-item:nth-child(odd)::after {
-            right: -12px;
+            right: -9px;
         }
 
         .timeline-item:nth-child(even)::after {
-            left: -12px;
+            left: -9px;
         }
 
         .timeline-content {
-            padding: 30px;
-            background-color: #f8fafc;
+            padding: 22px 22px 20px;
+            background-color: #f9fafb;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+            border-left: 3px solid var(--primary-color);
             transition: var(--transition);
         }
 
         .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow);
+            transform: translateY(-4px);
+            box-shadow: var(--box-shadow-soft);
         }
 
         .timeline-date {
             color: var(--primary-color);
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            font-size: 0.88rem;
         }
 
         .timeline-company {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--dark-color);
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--secondary-color);
         }
 
         .timeline-position {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
+            font-size: 0.98rem;
+            margin-bottom: 10px;
+            color: var(--gray-dark);
             font-weight: 600;
         }
 
         .timeline-description {
             color: var(--gray-dark);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 0.93rem;
         }
 
         .timeline-location {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: var(--gray-dark);
-            font-size: 0.9rem;
-            margin-top: 15px;
+            gap: 6px;
+            color: var(--gray-medium);
+            font-size: 0.85rem;
+            margin-top: 10px;
             font-style: italic;
         }
 
         /* Contact Section */
         .contact {
-            background-color: #f1f5f9;
+            background-color: #f3f4f6;
             position: relative;
         }
 
@@ -707,14 +790,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            background: linear-gradient(to top, rgba(241, 245, 249, 0) 0%, #f1f5f9 100%);
+            height: 90px;
+            background: linear-gradient(to top, rgba(243,244,246,0) 0%, #f3f4f6 100%);
             z-index: 1;
         }
 
         .contact-container {
             display: flex;
-            gap: 50px;
+            gap: 40px;
         }
 
         .contact-info {
@@ -727,122 +810,117 @@
 
         .contact-card {
             background-color: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 26px 24px;
+            border-radius: 14px;
+            margin-bottom: 26px;
+            box-shadow: var(--box-shadow-soft);
             transition: var(--transition);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .contact-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: var(--box-shadow);
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             width: 100%;
         }
 
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary-color);
-            margin-right: 15px;
-            min-width: 40px;
-            padding-top: 5px;
-        }
-
-        .contact-item-content {
-            text-align: left;
+            margin-right: 12px;
+            min-width: 36px;
+            padding-top: 4px;
         }
 
         .contact-item-content h3 {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            font-size: 0.98rem;
         }
 
         .contact-item-content p {
             color: var(--gray-dark);
+            font-size: 0.93rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             border: 1px solid var(--gray-light);
             border-radius: 6px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: var(--transition);
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.2);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
             background-color: white;
         }
 
         .form-group textarea {
-            height: 150px;
+            height: 140px;
             resize: vertical;
         }
 
         .social-links {
             display: flex;
-            gap: 20px;
-            margin-top: 20px;
-            justify-content: center;
+            gap: 14px;
+            margin-top: 18px;
         }
 
         .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            background-color: rgba(74, 108, 247, 0.1);
-            color: var(--primary-color);
-            font-size: 1.2rem;
+            background-color: rgba(15,23,42,0.05);
+            color: var(--secondary-color);
+            font-size: 1.05rem;
             transition: var(--transition);
             text-decoration: none;
         }
 
         .social-link:hover {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: white;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .certificate-btn {
-            margin-top: 15px;
+            margin-top: 14px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
+            font-size: 0.9rem;
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark-color);
+            background-color: var(--secondary-color);
             color: white;
-            padding: 60px 0 40px;
+            padding: 50px 0 32px;
             text-align: center;
             position: relative;
         }
@@ -858,106 +936,111 @@
         .footer-social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
+            gap: 16px;
+            margin: 16px 0;
         }
 
         .footer-social-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(248,250,252,0.06);
             color: white;
-            font-size: 1.2rem;
+            font-size: 1rem;
             transition: var(--transition);
             text-decoration: none;
         }
 
         .footer-social-link:hover {
             background-color: var(--primary-color);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .copyright {
-            color: var(--gray-medium);
-            margin-top: 20px;
-            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 12px;
+            font-size: 0.85rem;
         }
 
         .back-to-top {
             position: absolute;
-            top: -25px;
+            top: -22px;
             right: 40px;
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             background-color: var(--primary-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(15,23,42,0.35);
             transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
         }
 
         .back-to-top:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-5px);
-        }
-
-        /* Load More Button */
-        .load-more {
-            display: block;
-            margin: 40px auto 0;
-            padding: 12px 30px;
-        }
-
-        .hidden {
-            display: none;
+            transform: translateY(-4px);
         }
 
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
             }
-            
-            .hero-text p {
-                margin: 0 auto 30px;
+
+            .hero-text {
+                order: 2;
             }
-            
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .hero-subtitle {
+                max-width: 100%;
+            }
+
+            .hero-actions {
+                justify-content: flex-start;
+            }
+
             .contact-container {
                 flex-direction: column;
             }
 
-            .btn-container {
-                display: flex;
-                justify-content: center;
-            }
-
             .timeline::after {
-                left: 31px;
+                left: 32px;
             }
 
             .timeline-item {
                 width: 100%;
                 padding-left: 70px;
-                padding-right: 25px;
+                padding-right: 22px;
             }
 
             .timeline-item:nth-child(even) {
                 left: 0;
             }
 
-            .timeline-item:nth-child(odd)::after,
-            .timeline-item:nth-child(even)::after {
-                left: 21px;
+            .timeline-item::after {
+                left: 24px;
             }
 
             .skills-container {
@@ -969,31 +1052,31 @@
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 80px;
+                top: 64px;
                 left: 0;
                 width: 100%;
                 background: white;
                 flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                padding: 16px 20px 18px;
+                box-shadow: 0 10px 18px rgba(15,23,42,0.12);
             }
-            
+
             .nav-links.active {
                 display: flex;
             }
-            
+
             .nav-links li {
-                margin: 10px 0;
+                margin: 8px 0;
             }
-            
+
             .mobile-menu {
                 display: block;
             }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
+
+            .hero-title {
+                font-size: 2.1rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
@@ -1001,42 +1084,46 @@
             .back-to-top {
                 right: 20px;
             }
-            
+
             .language-switcher {
-                margin-left: 10px;
+                margin-left: 8px;
+            }
+
+            .hero-card {
+                max-width: 360px;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
+            .hero-title {
+                font-size: 1.8rem;
             }
-            
+
+            section {
+                padding: 80px 0;
+            }
+
             .projects-container {
                 grid-template-columns: 1fr;
             }
 
-            .btn-container {
+            .hero-actions {
                 flex-direction: column;
-                gap: 15px;
-            }
-
-            .btn-outline {
-                margin-left: 0;
+                align-items: flex-start;
             }
 
             .timeline-item {
-                padding-left: 50px;
+                padding-left: 58px;
             }
 
             .timeline-item::after {
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 14px;
+                left: 22px;
             }
 
-            .timeline-item:nth-child(odd)::after,
-            .timeline-item:nth-child(even)::after {
-                left: 16px;
+            .scroll-down {
+                bottom: 26px;
             }
         }
     </style>
@@ -1046,900 +1133,6 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo"><i class="fas fa-chart-line"></i> Ingrid Martinez</a>
+                <a href="#home" class="logo"><i class="fas fa-chart-line"></i> Ingrid Martinez</a>
                 <ul class="nav-links">
-                    <!-- Adicionei data-i18n para cada item do menu -->
-                    <li><a href="#home" class="active" data-i18n="menu.home">Início</a></li>
-                    <li><a href="#skills" data-i18n="menu.skills">Habilidades</a></li>
-                    <li><a href="#projects" data-i18n="menu.projects">Projetos</a></li>
-                    <li><a href="#experience" data-i18n="menu.experience">Experiência</a></li>
-                    <li><a href="#contact" data-i18n="menu.contact">Contato</a></li>
-                    <li class="language-switcher">
-                        <button class="lang-btn active" data-lang="pt-BR">BR</button>
-                        <button class="lang-btn" data-lang="en">EN</button>
-                    </li>
-                </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 data-i18n="hero.title">Olá, eu sou <span>Ingrid Martinez</span></h1>
-                    <p data-i18n="hero.subtitle">Formada em Administração de Empresas pela Universidade Salvador, com mais de 10 anos de experiência em Vendas e Atendimento. Atualmente em transição para a área de Ciência de Dados, onde aplico habilidades em Python, SQL e Power BI para transformar dados em soluções reais. Moro na Irlanda desde 2023, com propósito, curiosidade e paixão por tecnologia.</p>
-                    <div class="btn-container">
-                        <a href="#projects" class="btn">
-                            <i class="fas fa-folder-open"></i> <span data-i18n="hero.projectsBtn">Ver Projetos</span>
-                        </a>
-                        <!-- ATUALIZADO: Link para o CV -->
-                        <a href="https://github.com/martinez-ie/ingrid-martinez-portfolio/raw/main/Ingrid_Martinez_CV.pdf" 
-                           download="Ingrid_Martinez_CV.pdf" 
-                           class="btn btn-outline">
-                            <i class="fas fa-file-download"></i> <span data-i18n="hero.cvBtn">Baixar CV</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Profile" class="profile-img">
-                </div>
-            </div>
-            <a href="#skills" class="scroll-down">
-                <i class="fas fa-chevron-down fa-2x"></i>
-                <span data-i18n="hero.scrollDown">Rolar para baixo</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title" data-i18n="skills.title">Minhas Habilidades</h2>
-            <p class="section-subtitle" data-i18n="skills.subtitle">Tecnologias e habilidades que utilizo no meu dia a dia como cientista de dados.</p>
-            
-            <div class="skills-container">
-                <div class="skill-card">
-                    <div class="skill-icon">🐍</div>
-                    <h3>Python</h3>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">📊</div>
-                    <h3>DAX</h3>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">💾</div>
-                    <h3>SQL</h3>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">📈</div>
-                    <h3>Power BI</h3>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">📑</div>
-                    <h3>Excel</h3>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🔢</div>
-                    <h3>Pandas</h3>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">📓</div>
-                    <h3>Jupyter</h3>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
-                    <h3>Machine Learning</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title" data-i18n="projects.title">Meus Projetos</h2>
-            <p class="section-subtitle" data-i18n="projects.subtitle">Alguns dos projetos que desenvolvi para demonstrar minhas habilidades e experiência em ciência de dados.</p>
-            
-            <div class="projects-filters">
-                <button class="filter-btn active" data-i18n="projects.all">Todos</button>
-                <button class="filter-btn" data-i18n="projects.python">Python</button>
-                <button class="filter-btn" data-i18n="projects.ml">Machine Learning</button>
-                <button class="filter-btn" data-i18n="projects.viz">Visualização</button>
-            </div>
-            
-            <div class="projects-container">
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Previsão de Churn" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.project1.title">Previsão de Churn de Clientes</h3>
-                        <p class="project-description" data-i18n="projects.project1.desc">Modelo de machine learning para prever a probabilidade de clientes abandonarem um serviço. Utiliza técnicas de classificação e análise de comportamento.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Scikit-learn</span>
-                            <span class="tag">Pandas</span>
-                            <span class="tag">Machine Learning</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/martinez-ie/python_previsaoChurn" target="_blank"><i class="fab fa-github"></i> <span data-i18n="projects.code">Código</span></a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.demo">Demo</span></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=815&q=80" alt="Modelagem de Dados" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.project2.title">Modelagem de Dados</h3>
-                        <p class="project-description" data-i18n="projects.project2.desc">Projeto de modelagem de dados utilizando técnicas de ETL para transformar dados brutos em informações estruturadas e prontas para análise.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">ETL</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Pandas</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/martinez-ie/python_modelagem_de_dados" target="_blank"><i class="fab fa-github"></i> <span data-i18n="projects.code">Código</span></a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.demo">Demo</span></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80" alt="Modelo de Regressão" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.project3.title">Modelo de Regressão para Previsão de Vendas</h3>
-                        <p class="project-description" data-i18n="projects.project3.desc">Desenvolvimento de modelo de regressão para prever vendas futuras baseado em dados históricos e variáveis de mercado.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Regressão</span>
-                            <span class="tag">Scikit-learn</span>
-                            <span class="tag">Estatística</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/martinez-ie/modelo_regressao" target="_blank"><i class="fab fa-github"></i> <span data-i18n="projects.code">Código</span></a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.demo">Demo</span></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Player Churn Prediction" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.project4.title">Player Churn Prediction</h3>
-                        <p class="project-description" data-i18n="projects.project4.desc">Solução para prever a probabilidade de jogadores abandonarem um jogo online, utilizando análise comportamental e machine learning.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Classificação</span>
-                            <span class="tag">Pandas</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/martinez-ie/player_churn_prediction" target="_blank"><i class="fab fa-github"></i> <span data-i18n="projects.code">Código</span></a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.demo">Demo</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section Atualizada -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <h2 class="section-title" data-i18n="experience.title">Minha Experiência</h2>
-            <p class="section-subtitle" data-i18n="experience.subtitle">Minha trajetória profissional, trabalhando em projetos desafiadores e impactantes.</p>
-            
-            <div class="timeline">
-                <!-- Experiência 1: Costa Coffee -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp1.date">Out 2024 – Presente</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp1.company">Costa Coffee</h3>
-                        <div class="timeline-position" data-i18n="experience.exp1.position">Customer Service</div>
-                        <p class="timeline-description" data-i18n="experience.exp1.desc">Atendimento ao cliente em ambiente dinâmico, com foco na excelência do serviço, preparação de pedidos e apoio à operação da loja.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp1.location">Kilkenny, Irlanda</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 2: Escola DNC -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp2.date">Jul 2024 – Presente</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp2.company">Escola DNC</h3>
-                        <div class="timeline-position" data-i18n="experience.exp2.position">Estudante de Ciência de Dados</div>
-                        <p class="timeline-description" data-i18n="experience.exp2.desc">Estudos práticos em SQL, Python, Estatística, ETL, Visualização de Dados (Seaborn, Matplotlib, Plotly) e fundamentos de Machine Learning.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp2.location">Remoto</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 3: ICOT College -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp3.date">Mai 2023 – Jul 2024</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp3.company">ICOT College</h3>
-                        <div class="timeline-position" data-i18n="experience.exp3.position">Curso de Inglês (C1)</div>
-                        <p class="timeline-description" data-i18n="experience.exp3.desc">Estudo intensivo de inglês na Irlanda, alcançando o nível avançado C1. Desenvolvimento de habilidades de comunicação em ambiente multicultural e imersão completa na língua inglesa.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp3.location">Dublin, Irlanda</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 4: Cobli -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp4.date">Jun 2022 – Abr 2023</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp4.company">Cobli</h3>
-                        <div class="timeline-position" data-i18n="experience.exp4.position">Key Account Manager</div>
-                        <p class="timeline-description" data-i18n="experience.exp4.desc">Gestão de contas estratégicas, upsell/cross-sell, alinhamento de soluções às necessidades do cliente e análise de métricas de performance. Responsável por mais de R$ 200 mil em contratos e liderança do time em deals ativos.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp4.location">São Paulo, Brasil (Remoto)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 5: Viver Natura -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp5.date">Jun 2017 – Ago 2020</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp5.company">Viver Natura</h3>
-                        <div class="timeline-position" data-i18n="experience.exp5.position">Cofundadora</div>
-                        <p class="timeline-description" data-i18n="experience.exp5.desc">Criação e operação de marca própria, desenvolvimento de produtos, estratégias de expansão comercial, campanhas de marketing e gestão de orçamento.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp5.location">Salvador, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 6: Gerdau - Especialista de Vendas -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp6.date">Mai 2019 – Mai 2022</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp6.company">Gerdau</h3>
-                        <div class="timeline-position" data-i18n="experience.exp6.position">Especialista de Vendas</div>
-                        <p class="timeline-description" data-i18n="experience.exp6.desc">Gestão de carteira, relacionamento com clientes, análise de performance comercial e atingimento de metas mensais. Responsável por R$ 800 mil em receita/mês.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp6.location">Salvador, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 7: Gerdau - Analista -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp7.date">Nov 2015 – Abr 2019</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp7.company">Gerdau</h3>
-                        <div class="timeline-position" data-i18n="experience.exp7.position">Analista</div>
-                        <p class="timeline-description" data-i18n="experience.exp7.desc">Atuação com processos administrativos, auditoria, compras e segurança do trabalho. Otimização de processos, redução de riscos e suporte estratégico à operação.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp7.location">Salvador, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 8: Unilever -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp8.date">Jan 2014 – Jan 2015</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp8.company">Unilever</h3>
-                        <div class="timeline-position" data-i18n="experience.exp8.position">Estágio</div>
-                        <p class="timeline-description" data-i18n="experience.exp8.desc">Análise de performance de vendas, pesquisa de preços e suporte ao time de merchandising.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp8.location">Salvador, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 9: Shopping Barra -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp9.date">Fev 2013 – Ago 2013</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp9.company">Shopping Barra</h3>
-                        <div class="timeline-position" data-i18n="experience.exp9.position">Estágio</div>
-                        <p class="timeline-description" data-i18n="experience.exp9.desc">Apoio administrativo, atendimento ao público e elaboração de relatórios de relacionamento com lojistas.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp9.location">Salvador, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 10: AIESEC Brasil -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp10.date">Set 2011 – Dez 2013</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp10.company">AIESEC Brasil</h3>
-                        <div class="timeline-position" data-i18n="experience.exp10.position">Voluntária</div>
-                        <p class="timeline-description" data-i18n="experience.exp10.desc">Participação em projetos de impacto social, organização de eventos multiculturais e desenvolvimento de liderança jovem em parceria com ONGs.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp10.location">Salvador, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experiência 11: Outback Steakhouse -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt"></i> <span data-i18n="experience.exp11.date">Set 2012 – Dez 2012</span>
-                        </div>
-                        <h3 class="timeline-company" data-i18n="experience.exp11.company">Outback Steakhouse</h3>
-                        <div class="timeline-position" data-i18n="experience.exp11.position">Atendente</div>
-                        <p class="timeline-description" data-i18n="experience.exp11.desc">Atendimento ao cliente, trabalho em equipe e manutenção da eficiência operacional sob pressão em restaurante de alto volume.</p>
-                        <div class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> <span data-i18n="experience.exp11.location">Salvador, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title" data-i18n="contact.title">Entre em Contato</h2>
-            <p class="section-subtitle" data-i18n="contact.subtitle">Estou disponível para oportunidades e projetos. Vamos conversar!</p>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-item-content">
-                                <h3 data-i18n="contact.email">Email</h3>
-                                <p>ingrid-martinez@hotmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-item-content">
-                                <h3 data-i18n="contact.phone">Telefone</h3>
-                                <p>+353 89 988 3066</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-item-content">
-                                <h3 data-i18n="contact.location">Localização</h3>
-                                <p>Kilkenny - Irlanda</p>
-                            </div>
-                        </div>
-                        
-                        <p data-i18n="contact.message">Estou sempre aberta a discutir novos projetos, oportunidades criativas ou parcerias. Sinta-se à vontade para entrar em contato através de qualquer canal.</p>
-                        
-                        <div class="social-links">
-                            <a href="https://github.com/martinez-ie" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/ingridmartinezm/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        </div>
-                        
-                        <!-- NOVO: Botão para download do CV -->
-                        <a href="https://github.com/martinez-ie/ingrid-martinez-portfolio/raw/main/Ingrid_Martinez_CV.pdf" 
-                           download="Ingrid_Martinez_CV.pdf" 
-                           class="btn certificate-btn">
-                            <i class="fas fa-file-download"></i> <span data-i18n="cv.download">Baixar CV</span>
-                        </a>
-                        
-                        <a href="https://github.com/martinez-ie/Data-Science-Certification" target="_blank" class="btn certificate-btn">
-                            <i class="fas fa-certificate"></i> <span data-i18n="contact.certificatesBtn">Ver meus certificados</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/xnnvnlep" method="POST">
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.form.name">Nome</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" data-i18n="contact.form.email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" data-i18n="contact.form.subject">Assunto</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.form.message">Mensagem</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">
-                            <i class="fas fa-paper-plane"></i> <span data-i18n="contact.form.submit">Enviar Mensagem</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <a href="#home" class="back-to-top">
-            <i class="fas fa-arrow-up"></i>
-        </a>
-        <div class="container">
-            <div class="footer-content">
-                <a href="#" class="logo"><i class="fas fa-chart-line"></i> Ingrid Martinez</a>
-                
-                <div class="footer-social-links">
-                    <a href="https://github.com/martinez-ie" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ingridmartinezm/" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-                
-                <p class="copyright">© 2023 Ingrid Martinez. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Sistema de internacionalização
-        const translations = {
-            'pt-BR': {
-                // Traduções do menu
-                'menu.home': 'Início',
-                'menu.skills': 'Habilidades',
-                'menu.projects': 'Projetos',
-                'menu.experience': 'Experiência',
-                'menu.contact': 'Contato',
-                
-                // Hero Section
-                'hero.title': 'Olá, eu sou <span>Ingrid Martinez</span>',
-                'hero.subtitle': 'Formada em Administração de Empresas pela Universidade Salvador, com mais de 10 anos de experiência em Vendas e Atendimento. Atualmente em transição para a área de Ciência de Dados, onde aplico habilidades em Python, SQL e Power BI para transformar dados em soluções reais. Moro na Irlanda desde 2023, com propósito, curiosidade e paixão por tecnologia.',
-                'hero.projectsBtn': 'Ver Projetos',
-                'hero.cvBtn': 'Baixar CV',
-                'hero.scrollDown': 'Rolar para baixo',
-                
-                // Skills Section
-                'skills.title': 'Minhas Habilidades',
-                'skills.subtitle': 'Tecnologias e habilidades que utilizo no meu dia a dia como cientista de dados.',
-                
-                // Projects Section
-                'projects.title': 'Meus Projetos',
-                'projects.subtitle': 'Alguns dos projetos que desenvolvi para demonstrar minhas habilidades e experiência em ciência de dados.',
-                'projects.all': 'Todos',
-                'projects.python': 'Python',
-                'projects.ml': 'Machine Learning',
-                'projects.viz': 'Visualização',
-                'projects.code': 'Código',
-                'projects.demo': 'Demo',
-                'projects.project1.title': 'Previsão de Churn de Clientes',
-                'projects.project1.desc': 'Modelo de machine learning para prever a probabilidade de clientes abandonarem um serviço. Utiliza técnicas de classificação e análise de comportamento.',
-                'projects.project2.title': 'Modelagem de Dados',
-                'projects.project2.desc': 'Projeto de modelagem de dados utilizando técnicas de ETL para transformar dados brutos em informações estruturadas e prontas para análise.',
-                'projects.project3.title': 'Modelo de Regressão para Previsão de Vendas',
-                'projects.project3.desc': 'Desenvolvimento de modelo de regressão para prever vendas futuras baseado em dados históricos e variáveis de mercado.',
-                'projects.project4.title': 'Player Churn Prediction',
-                'projects.project4.desc': 'Solução para prever a probabilidade de jogadores abandonarem um jogo online, utilizando análise comportamental e machine learning.',
-                
-                // Experience Section
-                'experience.title': 'Minha Experiência',
-                'experience.subtitle': 'Minha trajetória profissional, trabalhando em projetos desafiadores e impactantes.',
-                'experience.exp1.date': 'Out 2024 – Presente',
-                'experience.exp1.company': 'Costa Coffee',
-                'experience.exp1.position': 'Customer Service',
-                'experience.exp1.desc': 'Atendimento ao cliente em ambiente dinâmico, com foco na excelência do serviço, preparação de pedidos e apoio à operação da loja.',
-                'experience.exp1.location': 'Kilkenny, Irlanda',
-                'experience.exp2.date': 'Jul 2024 – Presente',
-                'experience.exp2.company': 'Escola DNC',
-                'experience.exp2.position': 'Estudante de Ciência de Dados',
-                'experience.exp2.desc': 'Estudos práticos em SQL, Python, Estatística, ETL, Visualização de Dados (Seaborn, Matplotlib, Plotly) e fundamentos de Machine Learning.',
-                'experience.exp2.location': 'Remoto',
-                'experience.exp3.date': 'Mai 2023 – Jul 2024',
-                'experience.exp3.company': 'ICOT College',
-                'experience.exp3.position': 'Curso de Inglês (C1)',
-                'experience.exp3.desc': 'Estudo intensivo de inglês na Irlanda, alcançando o nível avançado C1. Desenvolvimento de habilidades de comunicação em ambiente multicultural e imersão completa na língua inglesa.',
-                'experience.exp3.location': 'Dublin, Irlanda',
-                'experience.exp4.date': 'Jun 2022 – Abr 2023',
-                'experience.exp4.company': 'Cobli',
-                'experience.exp4.position': 'Key Account Manager',
-                'experience.exp4.desc': 'Gestão de contas estratégicas, upsell/cross-sell, alinhamento de soluções às necessidades do cliente e análise de métricas de performance. Responsável por mais de R$ 200 mil em contratos e liderança do time em deals ativos.',
-                'experience.exp4.location': 'São Paulo, Brasil (Remoto)',
-                'experience.exp5.date': 'Jun 2017 – Ago 2020',
-                'experience.exp5.company': 'Viver Natura',
-                'experience.exp5.position': 'Cofundadora',
-                'experience.exp5.desc': 'Criação e operação de marca própria, desenvolvimento de produtos, estratégias de expansão comercial, campanhas de marketing e gestão de orçamento.',
-                'experience.exp5.location': 'Salvador, Brasil',
-                'experience.exp6.date': 'Mai 2019 – Mai 2022',
-                'experience.exp6.company': 'Gerdau',
-                'experience.exp6.position': 'Especialista de Vendas',
-                'experience.exp6.desc': 'Gestão de carteira, relacionamento com clientes, análise de performance comercial e atingimento de metas mensais. Responsável por R$ 800 mil em receita/mês.',
-                'experience.exp6.location': 'Salvador, Brasil',
-                'experience.exp7.date': 'Nov 2015 – Abr 2019',
-                'experience.exp7.company': 'Gerdau',
-                'experience.exp7.position': 'Analista',
-                'experience.exp7.desc': 'Atuação com processos administrativos, auditoria, compras e segurança do trabalho. Otimização de processos, redução de riscos e suporte estratégico à operação.',
-                'experience.exp7.location': 'Salvador, Brasil',
-                'experience.exp8.date': 'Jan 2014 – Jan 2015',
-                'experience.exp8.company': 'Unilever',
-                'experience.exp8.position': 'Estágio',
-                'experience.exp8.desc': 'Análise de performance de vendas, pesquisa de preços e suporte ao time de merchandising.',
-                'experience.exp8.location': 'Salvador, Brasil',
-                'experience.exp9.date': 'Fev 2013 – Ago 2013',
-                'experience.exp9.company': 'Shopping Barra',
-                'experience.exp9.position': 'Estágio',
-                'experience.exp9.desc': 'Apoio administrativo, atendimento ao público e elaboração de relatórios de relacionamento com lojistas.',
-                'experience.exp9.location': 'Salvador, Brasil',
-                'experience.exp10.date': 'Set 2011 – Dez 2013',
-                'experience.exp10.company': 'AIESEC Brasil',
-                'experience.exp10.position': 'Voluntária',
-                'experience.exp10.desc': 'Participação em projetos de impacto social, organização de eventos multiculturais e desenvolvimento de liderança jovem em parceria com ONGs.',
-                'experience.exp10.location': 'Salvador, Brasil',
-                'experience.exp11.date': 'Set 2012 – Dez 2012',
-                'experience.exp11.company': 'Outback Steakhouse',
-                'experience.exp11.position': 'Atendente',
-                'experience.exp11.desc': 'Atendimento ao cliente, trabalho em equipe e manutenção da eficiência operacional sob pressão em restaurante de alto volume.',
-                'experience.exp11.location': 'Salvador, Brasil',
-                
-                // Contact Section
-                'contact.title': 'Entre em Contato',
-                'contact.subtitle': 'Estou disponível para oportunidades e projetos. Vamos conversar!',
-                'contact.email': 'Email',
-                'contact.phone': 'Telefone',
-                'contact.location': 'Localização',
-                'contact.message': 'Estou sempre aberta a discutir novos projetos, oportunidades criativas ou parcerias. Sinta-se à vontade para entrar em contato através de qualquer canal.',
-                'contact.certificatesBtn': 'Ver meus certificados',
-                'contact.form.name': 'Nome',
-                'contact.form.email': 'Email',
-                'contact.form.subject': 'Assunto',
-                'contact.form.message': 'Mensagem',
-                'contact.form.submit': 'Enviar Mensagem',
-                
-                // Footer
-                'footer.rights': 'Todos os direitos reservados.',
-                
-                // Novo: Tradução para o botão de download do CV
-                'cv.download': 'Baixar CV'
-            },
-            'en': {
-                // Traduções do menu para inglês
-                'menu.home': 'Home',
-                'menu.skills': 'Skills',
-                'menu.projects': 'Projects',
-                'menu.experience': 'Experience',
-                'menu.contact': 'Contact',
-                
-                // Hero Section
-                'hero.title': 'Hello, I\'m <span>Ingrid Martinez</span>',
-                'hero.subtitle': 'Graduated in Business Administration from Universidade Salvador, with over 10 years of experience in Sales and Customer Service. Currently transitioning to Data Science, where I apply skills in Python, SQL, and Power BI to transform data into real solutions. Living in Ireland since 2023, with purpose, curiosity, and passion for technology.',
-                'hero.projectsBtn': 'View Projects',
-                'hero.cvBtn': 'Download CV',
-                'hero.scrollDown': 'Scroll Down',
-                
-                // Skills Section
-                'skills.title': 'My Skills',
-                'skills.subtitle': 'Technologies and skills I use in my daily work as a data scientist.',
-                
-                // Projects Section
-                'projects.title': 'My Projects',
-                'projects.subtitle': 'Some of the projects I developed to demonstrate my skills and experience in data science.',
-                'projects.all': 'All',
-                'projects.python': 'Python',
-                'projects.ml': 'Machine Learning',
-                'projects.viz': 'Visualization',
-                'projects.code': 'Code',
-                'projects.demo': 'Demo',
-                'projects.project1.title': 'Customer Churn Prediction',
-                'projects.project1.desc': 'Machine learning model to predict the probability of customers abandoning a service. Uses classification techniques and behavior analysis.',
-                'projects.project2.title': 'Data Modeling',
-                'projects.project2.desc': 'Data modeling project using ETL techniques to transform raw data into structured information ready for analysis.',
-                'projects.project3.title': 'Sales Prediction Regression Model',
-                'projects.project3.desc': 'Development of a regression model to predict future sales based on historical data and market variables.',
-                'projects.project4.title': 'Player Churn Prediction',
-                'projects.project4.desc': 'Solution to predict the probability of players abandoning an online game, using behavioral analysis and machine learning.',
-                
-                // Experience Section
-                'experience.title': 'My Experience',
-                'experience.subtitle': 'My professional journey, working on challenging and impactful projects.',
-                'experience.exp1.date': 'Oct 2024 – Present',
-                'experience.exp1.company': 'Costa Coffee',
-                'experience.exp1.position': 'Customer Service',
-                'experience.exp1.desc': 'Customer service in a dynamic environment, focusing on service excellence, order preparation, and store operation support.',
-                'experience.exp1.location': 'Kilkenny, Ireland',
-                'experience.exp2.date': 'Jul 2024 – Present',
-                'experience.exp2.company': 'DNC School',
-                'experience.exp2.position': 'Data Science Student',
-                'experience.exp2.desc': 'Practical studies in SQL, Python, Statistics, ETL, Data Visualization (Seaborn, Matplotlib, Plotly) and fundamentals of Machine Learning.',
-                'experience.exp2.location': 'Remote',
-                'experience.exp3.date': 'May 2023 – Jul 2024',
-                'experience.exp3.company': 'ICOT College',
-                'experience.exp3.position': 'English Course (C1)',
-                'experience.exp3.desc': 'Intensive English study in Ireland, achieving advanced C1 level. Development of communication skills in a multicultural environment and complete immersion in the English language.',
-                'experience.exp3.location': 'Dublin, Ireland',
-                'experience.exp4.date': 'Jun 2022 – Apr 2023',
-                'experience.exp4.company': 'Cobli',
-                'experience.exp4.position': 'Key Account Manager',
-                'experience.exp4.desc': 'Management of strategic accounts, upsell/cross-sell, alignment of solutions to customer needs, and performance metric analysis. Responsible for over R$ 200k in contracts and leadership of the team in active deals.',
-                'experience.exp4.location': 'São Paulo, Brazil (Remote)',
-                'experience.exp5.date': 'Jun 2017 – Aug 2020',
-                'experience.exp5.company': 'Viver Natura',
-                'experience.exp5.position': 'Co-founder',
-                'experience.exp5.desc': 'Creation and operation of a private label, product development, commercial expansion strategies, marketing campaigns, and budget management.',
-                'experience.exp5.location': 'Salvador, Brazil',
-                'experience.exp6.date': 'May 2019 – May 2022',
-                'experience.exp6.company': 'Gerdau',
-                'experience.exp6.position': 'Sales Specialist',
-                'experience.exp6.desc': 'Portfolio management, customer relationship, commercial performance analysis, and achievement of monthly targets. Responsible for R$ 800k in monthly revenue.',
-                'experience.exp6.location': 'Salvador, Brazil',
-                'experience.exp7.date': 'Nov 2015 – Apr 2019',
-                'experience.exp7.company': 'Gerdau',
-                'experience.exp7.position': 'Analyst',
-                'experience.exp7.desc': 'Work with administrative processes, auditing, purchasing, and occupational safety. Process optimization, risk reduction, and strategic support for operations.',
-                'experience.exp7.location': 'Salvador, Brazil',
-                'experience.exp8.date': 'Jan 2014 – Jan 2015',
-                'experience.exp8.company': 'Unilever',
-                'experience.exp8.position': 'Internship',
-                'experience.exp8.desc': 'Sales performance analysis, price research, and support for the merchandising team.',
-                'experience.exp8.location': 'Salvador, Brazil',
-                'experience.exp9.date': 'Feb 2013 – Aug 2013',
-                'experience.exp9.company': 'Shopping Barra',
-                'experience.exp9.position': 'Internship',
-                'experience.exp9.desc': 'Administrative support, customer service, and preparation of tenant relationship reports.',
-                'experience.exp9.location': 'Salvador, Brazil',
-                'experience.exp10.date': 'Sep 2011 – Dec 2013',
-                'experience.exp10.company': 'AIESEC Brazil',
-                'experience.exp10.position': 'Volunteer',
-                'experience.exp10.desc': 'Participation in social impact projects, organization of multicultural events, and development of youth leadership in partnership with NGOs.',
-                'experience.exp10.location': 'Salvador, Brazil',
-                'experience.exp11.date': 'Sep 2012 – Dec 2012',
-                'experience.exp11.company': 'Outback Steakhouse',
-                'experience.exp11.position': 'Attendant',
-                'experience.exp11.desc': 'Customer service, teamwork, and maintaining operational efficiency under pressure in a high-volume restaurant.',
-                'experience.exp11.location': 'Salvador, Brazil',
-                
-                // Contact Section
-                'contact.title': 'Contact Me',
-                'contact.subtitle': 'I\'m available for opportunities and projects. Let\'s talk!',
-                'contact.email': 'Email',
-                'contact.phone': 'Phone',
-                'contact.location': 'Location',
-                'contact.message': 'I\'m always open to discussing new projects, creative opportunities, or partnerships. Feel free to contact me through any channel.',
-                'contact.certificatesBtn': 'View my certificates',
-                'contact.form.name': 'Name',
-                'contact.form.email': 'Email',
-                'contact.form.subject': 'Subject',
-                'contact.form.message': 'Message',
-                'contact.form.submit': 'Send Message',
-                
-                // Footer
-                'footer.rights': 'All rights reserved.',
-                
-                // Novo: Tradução para o botão de download do CV
-                'cv.download': 'Download CV'
-            }
-        };
-
-        // Função para trocar idioma
-        function setLanguage(lang) {
-            // Salvar preferência no localStorage
-            localStorage.setItem('preferredLanguage', lang);
-            
-            // Atualizar botões de idioma
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                if (btn.dataset.lang === lang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-            
-            // Atualizar todas as strings na página
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.placeholder = translations[lang][key];
-                    } else {
-                        element.innerHTML = translations[lang][key];
-                    }
-                }
-            });
-        }
-
-        // Verificar idioma salvo ou preferência do navegador
-        function detectLanguage() {
-            const savedLang = localStorage.getItem('preferredLanguage');
-            if (savedLang) {
-                return savedLang;
-            }
-            
-            const browserLang = navigator.language || navigator.userLanguage;
-            return browserLang.startsWith('pt') ? 'pt-BR' : 'en';
-        }
-
-        // Inicializar com idioma detectado
-        const currentLang = detectLanguage();
-        setLanguage(currentLang);
-
-        // Event listeners para botões de idioma
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                setLanguage(btn.dataset.lang);
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active nav link
-                    document.querySelectorAll('.nav-links a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
-            });
-        });
-        
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Simulate form submission
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const originalBtnText = submitBtn.innerHTML;
-                
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (currentLang === 'pt-BR' ? 'Enviando...' : 'Sending...');
-                submitBtn.disabled = true;
-                
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.disabled = false;
-                    alert(currentLang === 'pt-BR' ? 'Mensagem enviada com sucesso! Entrarei em contato em breve.' : 'Message sent successfully! I will contact you soon.');
-                    contactForm.reset();
-                }, 1500);
-            });
-        }
-        
-        // Highlight active section in nav
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const header = document.getElementById('header');
-            
-            // Add shadow to header on scroll
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Show/hide back to top button
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 500) {
-                backToTop.style.opacity = '1';
-                backToTop.style.visibility = 'visible';
-            } else {
-                backToTop.style.opacity = '0';
-                backToTop.style.visibility = 'hidden';
-            }
-        });
-        
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.skill-card, .project-card, .timeline-content, .contact-card');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        // Initialize animations
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Project filters
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-            });
-        });
-    </script>
-</body>
-</html>
+                    <li><a href="#home"
