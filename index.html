@@ -234,10 +234,6 @@
             color: var(--secondary-color);
         }
 
-        .hero-title span {
-            color: var(--primary-color);
-        }
-
         .hero-subtitle {
             font-size: 1.05rem;
             color: var(--gray-dark);
@@ -398,7 +394,7 @@
         }
 
         .hero-code {
-            font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             font-size: 0.75rem;
             color: #e5e7eb;
             line-height: 1.5;
@@ -432,19 +428,10 @@
             background: linear-gradient(to top, rgba(37,99,235,0.9), rgba(59,130,246,0.4));
         }
 
-        .hero-bar:nth-child(2) {
-            height: 60%;
-            opacity: 0.6;
-        }
-
-        .hero-bar:nth-child(3) {
-            height: 85%;
-        }
-
-        .hero-bar:nth-child(4) {
-            height: 45%;
-            opacity: 0.55;
-        }
+        .hero-bar:nth-child(1) { height: 40%; opacity: 0.6; }
+        .hero-bar:nth-child(2) { height: 65%; }
+        .hero-bar:nth-child(3) { height: 90%; }
+        .hero-bar:nth-child(4) { height: 55%; opacity: 0.7; }
 
         .hero-chart-caption {
             font-size: 0.7rem;
@@ -990,61 +977,39 @@
             transform: translateY(-4px);
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
-                text-align: left;
             }
-
-            .hero-text {
-                order: 2;
-            }
-
-            .hero-image {
-                order: 1;
-            }
-
             .hero {
                 padding-top: 100px;
             }
-
             .hero-title {
                 font-size: 2.3rem;
             }
-
             .hero-subtitle {
                 max-width: 100%;
             }
-
             .hero-actions {
                 justify-content: flex-start;
             }
-
             .contact-container {
                 flex-direction: column;
             }
-
             .timeline::after {
                 left: 32px;
             }
-
             .timeline-item {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 22px;
             }
-
             .timeline-item:nth-child(even) {
                 left: 0;
             }
-
             .timeline-item::after {
                 left: 24px;
-            }
-
-            .skills-container {
-                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             }
         }
 
@@ -1060,35 +1025,24 @@
                 padding: 16px 20px 18px;
                 box-shadow: 0 10px 18px rgba(15,23,42,0.12);
             }
-
             .nav-links.active {
                 display: flex;
             }
-
             .nav-links li {
                 margin: 8px 0;
             }
-
             .mobile-menu {
                 display: block;
             }
-
             .hero-title {
                 font-size: 2.1rem;
             }
-
             .section-title {
                 font-size: 2rem;
             }
-
             .back-to-top {
                 right: 20px;
             }
-
-            .language-switcher {
-                margin-left: 8px;
-            }
-
             .hero-card {
                 max-width: 360px;
             }
@@ -1098,30 +1052,24 @@
             .hero-title {
                 font-size: 1.8rem;
             }
-
             section {
                 padding: 80px 0;
             }
-
             .projects-container {
                 grid-template-columns: 1fr;
             }
-
             .hero-actions {
                 flex-direction: column;
                 align-items: flex-start;
             }
-
             .timeline-item {
                 padding-left: 58px;
             }
-
             .timeline-item::after {
                 width: 14px;
                 height: 14px;
                 left: 22px;
             }
-
             .scroll-down {
                 bottom: 26px;
             }
@@ -1135,4 +1083,757 @@
             <nav class="navbar">
                 <a href="#home" class="logo"><i class="fas fa-chart-line"></i> Ingrid Martinez</a>
                 <ul class="nav-links">
-                    <li><a href="#home"
+                    <li><a href="#home" class="active" data-i18n="menu.home">Início</a></li>
+                    <li><a href="#skills" data-i18n="menu.skills">Habilidades</a></li>
+                    <li><a href="#projects" data-i18n="menu.projects">Projetos</a></li>
+                    <li><a href="#experience" data-i18n="menu.experience">Experiência</a></li>
+                    <li><a href="#contact" data-i18n="menu.contact">Contato</a></li>
+                    <li class="language-switcher">
+                        <button class="lang-btn active" data-lang="pt-BR">BR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-i18n="hero.title">
+                        Ingrid Martinez — Data Science & Analytics
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">
+                        Em transição estruturada para Ciência de Dados após 10 anos atuando em vendas, operação e tomada de decisão baseada em métricas. Hoje aplico <strong>Python, SQL e análise de dados</strong> para resolver problemas reais, com foco em compreender o negócio, estruturar dados e construir soluções replicáveis.<br><br>Brasileira vivendo na Irlanda desde 2023, estudando inglês (nível C1) e desenvolvendo projetos voltados para empresas e produtos digitais.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn">
+                            <i class="fas fa-folder-open"></i>
+                            <span data-i18n="hero.projectsBtn">Ver Projetos</span>
+                        </a>
+                        <a href="https://github.com/martinez-ie/ingrid-martinez-portfolio/raw/main/Ingrid_Martinez_CV.pdf"
+                           download="Ingrid_Martinez_CV.pdf"
+                           class="btn btn-outline">
+                            <i class="fas fa-file-download"></i>
+                            <span data-i18n="hero.cvBtn">Baixar CV</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <div class="hero-card-header">
+                            <div class="hero-pill">
+                                <span class="hero-dot"></span>
+                                Data · Code · Business
+                            </div>
+                            <span class="hero-tag">Live in Ireland · PT/EN</span>
+                        </div>
+                        <div class="hero-window">
+                            <div class="hero-window-header">
+                                <div class="hero-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span>projects/portfolio.py</span>
+                            </div>
+                            <div class="hero-window-body">
+                                <pre class="hero-code">
+<span class="comment"># Ingrid · Data & Analytics</span>
+<span class="keyword">class</span> <span class="func">DataProfile</span>:
+    <span class="keyword">def</span> <span class="func">__init__</span>(self):
+        self.location = <span class="string">"Ireland"</span>
+        self.stack = [<span class="string">"Python"</span>, <span class="string">"SQL"</span>, <span class="string">"Power BI"</span>]
+        self.background = <span class="string">"10y business"</span>
+
+    <span class="keyword">def</span> <span class="func">build</span>(self, problem):
+        <span class="comment"># understand business, clean data, ship</span>
+        <span class="keyword">return</span> <span class="string">"clear insights"</span></pre>
+                                <div class="hero-chart">
+                                    <div class="hero-chart-bars">
+                                        <div class="hero-bar"></div>
+                                        <div class="hero-bar"></div>
+                                        <div class="hero-bar"></div>
+                                        <div class="hero-bar"></div>
+                                    </div>
+                                    <div class="hero-chart-caption">
+                                        Evolução de projetos em dados · foco em clareza, negócio e entrega real.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#skills" class="scroll-down">
+                <i class="fas fa-chevron-down fa-2x"></i>
+                <span data-i18n="hero.scrollDown">Rolar para baixo</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title" data-i18n="skills.title">Minhas Habilidades</h2>
+            <p class="section-subtitle" data-i18n="skills.subtitle">Tecnologias e habilidades que utilizo no meu dia a dia como cientista de dados.</p>
+            <div class="skills-container">
+                <div class="skill-card"><div class="skill-icon">🐍</div><h3>Python</h3></div>
+                <div class="skill-card"><div class="skill-icon">📊</div><h3>DAX</h3></div>
+                <div class="skill-card"><div class="skill-icon">💾</div><h3>SQL</h3></div>
+                <div class="skill-card"><div class="skill-icon">📈</div><h3>Power BI</h3></div>
+                <div class="skill-card"><div class="skill-icon">📑</div><h3>Excel</h3></div>
+                <div class="skill-card"><div class="skill-icon">🔢</div><h3>Pandas</h3></div>
+                <div class="skill-card"><div class="skill-icon">📓</div><h3>Jupyter</h3></div>
+                <div class="skill-card"><div class="skill-icon">🤖</div><h3>Machine Learning</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects.title">Meus Projetos</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Alguns dos projetos que desenvolvi para demonstrar minhas habilidades e experiência em ciência de dados.</p>
+
+            <div class="projects-filters">
+                <button class="filter-btn active" data-i18n="projects.all">Todos</button>
+                <button class="filter-btn" data-i18n="projects.python">Python</button>
+                <button class="filter-btn" data-i18n="projects.ml">Machine Learning</button>
+                <button class="filter-btn" data-i18n="projects.viz">Visualização</button>
+            </div>
+
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=870&q=80" alt="Previsão de Churn" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.project1.title">Previsão de Churn de Clientes</h3>
+                        <p class="project-description" data-i18n="projects.project1.desc">Modelo de machine learning para prever a probabilidade de clientes abandonarem um serviço.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">Machine Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/martinez-ie/python_previsaoChurn" target="_blank"><i class="fab fa-github"></i><span data-i18n="projects.code">Código</span></a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i><span data-i18n="projects.demo">Demo</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=815&q=80" alt="Modelagem de Dados" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.project2.title">Modelagem de Dados</h3>
+                        <p class="project-description" data-i18n="projects.project2.desc">Projeto de modelagem de dados utilizando técnicas de ETL para transformar dados brutos em informações estruturadas.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span><span class="tag">ETL</span><span class="tag">SQL</span><span class="tag">Pandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/martinez-ie/python_modelagem_de_dados" target="_blank"><i class="fab fa-github"></i><span data-i18n="projects.code">Código</span></a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i><span data-i18n="projects.demo">Demo</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=871&q=80" alt="Modelo de Regressão" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.project3.title">Modelo de Regressão para Previsão de Vendas</h3>
+                        <p class="project-description" data-i18n="projects.project3.desc">Desenvolvimento de modelo de regressão para prever vendas futuras baseado em dados históricos.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span><span class="tag">Regressão</span><span class="tag">Scikit-learn</span><span class="tag">Estatística</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/martinez-ie/modelo_regressao" target="_blank"><i class="fab fa-github"></i><span data-i18n="projects.code">Código</span></a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i><span data-i18n="projects.demo">Demo</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=870&q=80" alt="Player Churn Prediction" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.project4.title">Player Churn Prediction</h3>
+                        <p class="project-description" data-i18n="projects.project4.desc">Solução para prever a probabilidade de jogadores abandonarem um jogo online.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Classificação</span><span class="tag">Pandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/martinez-ie/player_churn_prediction" target="_blank"><i class="fab fa-github"></i><span data-i18n="projects.code">Código</span></a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i><span data-i18n="projects.demo">Demo</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience (mantive igual ao seu) -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title" data-i18n="experience.title">Minha Experiência</h2>
+            <p class="section-subtitle" data-i18n="experience.subtitle">Minha trajetória profissional, trabalhando em projetos desafiadores e impactantes.</p>
+            <div class="timeline">
+                <!-- Costa -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp1.date">Out 2024 – Presente</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp1.company">Costa Coffee</h3>
+                        <div class="timeline-position" data-i18n="experience.exp1.position">Customer Service</div>
+                        <p class="timeline-description" data-i18n="experience.exp1.desc">Atendimento ao cliente em ambiente dinâmico, com foco na excelência do serviço.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp1.location">Kilkenny, Irlanda</span></div>
+                    </div>
+                </div>
+                <!-- DNC -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp2.date">Jul 2024 – Presente</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp2.company">Escola DNC</h3>
+                        <div class="timeline-position" data-i18n="experience.exp2.position">Estudante de Ciência de Dados</div>
+                        <p class="timeline-description" data-i18n="experience.exp2.desc">Estudos práticos em SQL, Python, Estatística, ETL, Visualização de Dados e Machine Learning.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp2.location">Remoto</span></div>
+                    </div>
+                </div>
+                <!-- ICOT -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp3.date">Mai 2023 – Jul 2024</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp3.company">ICOT College</h3>
+                        <div class="timeline-position" data-i18n="experience.exp3.position">Curso de Inglês (C1)</div>
+                        <p class="timeline-description" data-i18n="experience.exp3.desc">Estudo intensivo de inglês na Irlanda, alcançando nível C1.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp3.location">Dublin, Irlanda</span></div>
+                    </div>
+                </div>
+                <!-- Cobli -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp4.date">Jun 2022 – Abr 2023</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp4.company">Cobli</h3>
+                        <div class="timeline-position" data-i18n="experience.exp4.position">Key Account Manager</div>
+                        <p class="timeline-description" data-i18n="experience.exp4.desc">Gestão de contas estratégicas, upsell/cross-sell e análise de métricas.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp4.location">São Paulo, Brasil (Remoto)</span></div>
+                    </div>
+                </div>
+                <!-- Viver Natura -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp5.date">Jun 2017 – Ago 2020</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp5.company">Viver Natura</h3>
+                        <div class="timeline-position" data-i18n="experience.exp5.position">Cofundadora</div>
+                        <p class="timeline-description" data-i18n="experience.exp5.desc">Criação e operação de marca própria, desenvolvimento de produtos e gestão de orçamento.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp5.location">Salvador, Brasil</span></div>
+                    </div>
+                </div>
+                <!-- Gerdau Especialista -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp6.date">Mai 2019 – Mai 2022</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp6.company">Gerdau</h3>
+                        <div class="timeline-position" data-i18n="experience.exp6.position">Especialista de Vendas</div>
+                        <p class="timeline-description" data-i18n="experience.exp6.desc">Gestão de carteira, relacionamento com clientes e análise de performance comercial.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp6.location">Salvador, Brasil</span></div>
+                    </div>
+                </div>
+                <!-- Gerdau Analista -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp7.date">Nov 2015 – Abr 2019</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp7.company">Gerdau</h3>
+                        <div class="timeline-position" data-i18n="experience.exp7.position">Analista</div>
+                        <p class="timeline-description" data-i18n="experience.exp7.desc">Atuação com processos administrativos, auditoria, compras e segurança do trabalho.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp7.location">Salvador, Brasil</span></div>
+                    </div>
+                </div>
+                <!-- Unilever -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp8.date">Jan 2014 – Jan 2015</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp8.company">Unilever</h3>
+                        <div class="timeline-position" data-i18n="experience.exp8.position">Estágio</div>
+                        <p class="timeline-description" data-i18n="experience.exp8.desc">Análise de performance de vendas e suporte ao time de merchandising.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp8.location">Salvador, Brasil</span></div>
+                    </div>
+                </div>
+                <!-- Shopping Barra -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp9.date">Fev 2013 – Ago 2013</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp9.company">Shopping Barra</h3>
+                        <div class="timeline-position" data-i18n="experience.exp9.position">Estágio</div>
+                        <p class="timeline-description" data-i18n="experience.exp9.desc">Apoio administrativo, atendimento ao público e relatórios.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp9.location">Salvador, Brasil</span></div>
+                    </div>
+                </div>
+                <!-- AIESEC -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp10.date">Set 2011 – Dez 2013</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp10.company">AIESEC Brasil</h3>
+                        <div class="timeline-position" data-i18n="experience.exp10.position">Voluntária</div>
+                        <p class="timeline-description" data-i18n="experience.exp10.desc">Projetos de impacto social e eventos multiculturais.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp10.location">Salvador, Brasil</span></div>
+                    </div>
+                </div>
+                <!-- Outback -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="far fa-calendar-alt"></i><span data-i18n="experience.exp11.date">Set 2012 – Dez 2012</span></div>
+                        <h3 class="timeline-company" data-i18n="experience.exp11.company">Outback Steakhouse</h3>
+                        <div class="timeline-position" data-i18n="experience.exp11.position">Atendente</div>
+                        <p class="timeline-description" data-i18n="experience.exp11.desc">Atendimento ao cliente em ambiente de alto volume.</p>
+                        <div class="timeline-location"><i class="fas fa-map-marker-alt"></i><span data-i18n="experience.exp11.location">Salvador, Brasil</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.title">Entre em Contato</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Estou disponível para oportunidades e projetos. Vamos conversar!</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-item-content">
+                                <h3 data-i18n="contact.email">Email</h3>
+                                <p>ingrid-martinez@hotmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-item-content">
+                                <h3 data-i18n="contact.phone">Telefone</h3>
+                                <p>+353 89 988 3066</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-item-content">
+                                <h3 data-i18n="contact.location">Localização</h3>
+                                <p>Kilkenny - Irlanda</p>
+                            </div>
+                        </div>
+                        <p data-i18n="contact.message">Estou sempre aberta a discutir novos projetos, oportunidades criativas ou parcerias.</p>
+                        <div class="social-links">
+                            <a href="https://github.com/martinez-ie" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/ingridmartinezm/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <a href="https://github.com/martinez-ie/ingrid-martinez-portfolio/raw/main/Ingrid_Martinez_CV.pdf"
+                           download="Ingrid_Martinez_CV.pdf"
+                           class="btn certificate-btn">
+                            <i class="fas fa-file-download"></i><span data-i18n="cv.download">Baixar CV</span>
+                        </a>
+                        <a href="https://github.com/martinez-ie/Data-Science-Certification" target="_blank" class="btn certificate-btn">
+                            <i class="fas fa-certificate"></i><span data-i18n="contact.certificatesBtn">Ver meus certificados</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xnnvnlep" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.form.name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.form.email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="contact.form.subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Mensagem</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i><span data-i18n="contact.form.submit">Enviar Mensagem</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#home" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#home" class="logo"><i class="fas fa-chart-line"></i> Ingrid Martinez</a>
+                <div class="footer-social-links">
+                    <a href="https://github.com/martinez-ie" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ingridmartinezm/" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="copyright">© 2023 Ingrid Martinez. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'pt-BR': {
+                'menu.home': 'Início',
+                'menu.skills': 'Habilidades',
+                'menu.projects': 'Projetos',
+                'menu.experience': 'Experiência',
+                'menu.contact': 'Contato',
+
+                'hero.title': 'Ingrid Martinez — Data Science & Analytics',
+                'hero.subtitle': 'Em transição estruturada para Ciência de Dados após 10 anos atuando em vendas, operação e tomada de decisão baseada em métricas. Hoje aplico <strong>Python, SQL e análise de dados</strong> para resolver problemas reais, com foco em compreender o negócio, estruturar dados e construir soluções replicáveis.<br><br>Brasileira vivendo na Irlanda desde 2023, estudando inglês (nível C1) e desenvolvendo projetos voltados para empresas e produtos digitais.',
+                'hero.projectsBtn': 'Ver Projetos',
+                'hero.cvBtn': 'Baixar CV',
+                'hero.scrollDown': 'Rolar para baixo',
+
+                'skills.title': 'Minhas Habilidades',
+                'skills.subtitle': 'Tecnologias e habilidades que utilizo no meu dia a dia como cientista de dados.',
+
+                'projects.title': 'Meus Projetos',
+                'projects.subtitle': 'Alguns dos projetos que desenvolvi para demonstrar minhas habilidades e experiência em ciência de dados.',
+                'projects.all': 'Todos',
+                'projects.python': 'Python',
+                'projects.ml': 'Machine Learning',
+                'projects.viz': 'Visualização',
+                'projects.code': 'Código',
+                'projects.demo': 'Demo',
+                'projects.project1.title': 'Previsão de Churn de Clientes',
+                'projects.project1.desc': 'Modelo de machine learning para prever a probabilidade de clientes abandonarem um serviço.',
+                'projects.project2.title': 'Modelagem de Dados',
+                'projects.project2.desc': 'Projeto de modelagem de dados utilizando técnicas de ETL para transformar dados brutos em informações estruturadas.',
+                'projects.project3.title': 'Modelo de Regressão para Previsão de Vendas',
+                'projects.project3.desc': 'Desenvolvimento de modelo de regressão para prever vendas futuras baseado em dados históricos.',
+                'projects.project4.title': 'Player Churn Prediction',
+                'projects.project4.desc': 'Solução para prever a probabilidade de jogadores abandonarem um jogo online.',
+
+                'experience.title': 'Minha Experiência',
+                'experience.subtitle': 'Minha trajetória profissional, trabalhando em projetos desafiadores e impactantes.',
+                'experience.exp1.date': 'Out 2024 – Presente',
+                'experience.exp1.company': 'Costa Coffee',
+                'experience.exp1.position': 'Customer Service',
+                'experience.exp1.desc': 'Atendimento ao cliente em ambiente dinâmico, com foco na excelência do serviço.',
+                'experience.exp1.location': 'Kilkenny, Irlanda',
+                'experience.exp2.date': 'Jul 2024 – Presente',
+                'experience.exp2.company': 'Escola DNC',
+                'experience.exp2.position': 'Estudante de Ciência de Dados',
+                'experience.exp2.desc': 'Estudos práticos em SQL, Python, Estatística, ETL, Visualização de Dados e Machine Learning.',
+                'experience.exp2.location': 'Remoto',
+                'experience.exp3.date': 'Mai 2023 – Jul 2024',
+                'experience.exp3.company': 'ICOT College',
+                'experience.exp3.position': 'Curso de Inglês (C1)',
+                'experience.exp3.desc': 'Estudo intensivo de inglês na Irlanda, alcançando o nível avançado C1.',
+                'experience.exp3.location': 'Dublin, Irlanda',
+                'experience.exp4.date': 'Jun 2022 – Abr 2023',
+                'experience.exp4.company': 'Cobli',
+                'experience.exp4.position': 'Key Account Manager',
+                'experience.exp4.desc': 'Gestão de contas estratégicas, upsell/cross-sell, alinhamento de soluções e análise de métricas.',
+                'experience.exp4.location': 'São Paulo, Brasil (Remoto)',
+                'experience.exp5.date': 'Jun 2017 – Ago 2020',
+                'experience.exp5.company': 'Viver Natura',
+                'experience.exp5.position': 'Cofundadora',
+                'experience.exp5.desc': 'Criação e operação de marca própria, desenvolvimento de produtos e campanhas de marketing.',
+                'experience.exp5.location': 'Salvador, Brasil',
+                'experience.exp6.date': 'Mai 2019 – Mai 2022',
+                'experience.exp6.company': 'Gerdau',
+                'experience.exp6.position': 'Especialista de Vendas',
+                'experience.exp6.desc': 'Gestão de carteira, relacionamento com clientes e atingimento de metas mensais.',
+                'experience.exp6.location': 'Salvador, Brasil',
+                'experience.exp7.date': 'Nov 2015 – Abr 2019',
+                'experience.exp7.company': 'Gerdau',
+                'experience.exp7.position': 'Analista',
+                'experience.exp7.desc': 'Atuação com processos administrativos, auditoria, compras e segurança do trabalho.',
+                'experience.exp7.location': 'Salvador, Brasil',
+                'experience.exp8.date': 'Jan 2014 – Jan 2015',
+                'experience.exp8.company': 'Unilever',
+                'experience.exp8.position': 'Estágio',
+                'experience.exp8.desc': 'Análise de performance de vendas, pesquisa de preços e suporte ao time.',
+                'experience.exp8.location': 'Salvador, Brasil',
+                'experience.exp9.date': 'Fev 2013 – Ago 2013',
+                'experience.exp9.company': 'Shopping Barra',
+                'experience.exp9.position': 'Estágio',
+                'experience.exp9.desc': 'Apoio administrativo e atendimento ao público.',
+                'experience.exp9.location': 'Salvador, Brasil',
+                'experience.exp10.date': 'Set 2011 – Dez 2013',
+                'experience.exp10.company': 'AIESEC Brasil',
+                'experience.exp10.position': 'Voluntária',
+                'experience.exp10.desc': 'Projetos de impacto social e eventos multiculturais.',
+                'experience.exp10.location': 'Salvador, Brasil',
+                'experience.exp11.date': 'Set 2012 – Dez 2012',
+                'experience.exp11.company': 'Outback Steakhouse',
+                'experience.exp11.position': 'Atendente',
+                'experience.exp11.desc': 'Atendimento ao cliente em ambiente de alto volume.',
+                'experience.exp11.location': 'Salvador, Brasil',
+
+                'contact.title': 'Entre em Contato',
+                'contact.subtitle': 'Estou disponível para oportunidades e projetos. Vamos conversar!',
+                'contact.email': 'Email',
+                'contact.phone': 'Telefone',
+                'contact.location': 'Localização',
+                'contact.message': 'Estou sempre aberta a discutir novos projetos, oportunidades criativas ou parcerias.',
+                'contact.certificatesBtn': 'Ver meus certificados',
+                'contact.form.name': 'Nome',
+                'contact.form.email': 'Email',
+                'contact.form.subject': 'Assunto',
+                'contact.form.message': 'Mensagem',
+                'contact.form.submit': 'Enviar Mensagem',
+
+                'footer.rights': 'Todos os direitos reservados.',
+                'cv.download': 'Baixar CV'
+            },
+            'en': {
+                'menu.home': 'Home',
+                'menu.skills': 'Skills',
+                'menu.projects': 'Projects',
+                'menu.experience': 'Experience',
+                'menu.contact': 'Contact',
+
+                'hero.title': 'Ingrid Martinez — Data Science & Analytics',
+                'hero.subtitle': 'Transitioning into Data Science after 10 years working in sales, operations and metrics-driven decision-making. Today I use <strong>Python, SQL and data analysis</strong> to solve real problems, focusing on understanding the business, structuring data and building replicable solutions.<br><br>Brazilian living in Ireland since 2023, studying English (C1) and developing projects for companies and digital products.',
+                'hero.projectsBtn': 'View Projects',
+                'hero.cvBtn': 'Download CV',
+                'hero.scrollDown': 'Scroll Down',
+
+                'skills.title': 'My Skills',
+                'skills.subtitle': 'Technologies and skills I use in my daily work as a data professional.',
+
+                'projects.title': 'My Projects',
+                'projects.subtitle': 'Some of the projects I developed to demonstrate my skills and experience.',
+                'projects.all': 'All',
+                'projects.python': 'Python',
+                'projects.ml': 'Machine Learning',
+                'projects.viz': 'Visualization',
+                'projects.code': 'Code',
+                'projects.demo': 'Demo',
+                'projects.project1.title': 'Customer Churn Prediction',
+                'projects.project1.desc': 'Machine learning model to predict churn probability.',
+                'projects.project2.title': 'Data Modeling',
+                'projects.project2.desc': 'ETL and data structuring for analysis.',
+                'projects.project3.title': 'Sales Forecast Regression',
+                'projects.project3.desc': 'Regression model to forecast sales based on historical data.',
+                'projects.project4.title': 'Player Churn Prediction',
+                'projects.project4.desc': 'Behavioral analysis and churn prediction for players.',
+
+                'experience.title': 'My Experience',
+                'experience.subtitle': 'My professional journey, working on challenging and impactful projects.',
+                'experience.exp1.date': 'Oct 2024 – Present',
+                'experience.exp1.company': 'Costa Coffee',
+                'experience.exp1.position': 'Customer Service',
+                'experience.exp1.desc': 'Customer service in a dynamic environment, focusing on service excellence.',
+                'experience.exp1.location': 'Kilkenny, Ireland',
+                'experience.exp2.date': 'Jul 2024 – Present',
+                'experience.exp2.company': 'DNC School',
+                'experience.exp2.position': 'Data Science Student',
+                'experience.exp2.desc': 'Practical studies in SQL, Python, Statistics, ETL, Data Visualization and Machine Learning.',
+                'experience.exp2.location': 'Remote',
+                'experience.exp3.date': 'May 2023 – Jul 2024',
+                'experience.exp3.company': 'ICOT College',
+                'experience.exp3.position': 'English Course (C1)',
+                'experience.exp3.desc': 'Intensive English study in Ireland, reaching C1 level.',
+                'experience.exp3.location': 'Dublin, Ireland',
+                'experience.exp4.date': 'Jun 2022 – Apr 2023',
+                'experience.exp4.company': 'Cobli',
+                'experience.exp4.position': 'Key Account Manager',
+                'experience.exp4.desc': 'Management of strategic accounts, upsell/cross-sell and metric analysis.',
+                'experience.exp4.location': 'São Paulo, Brazil (Remote)',
+                'experience.exp5.date': 'Jun 2017 – Aug 2020',
+                'experience.exp5.company': 'Viver Natura',
+                'experience.exp5.position': 'Co-founder',
+                'experience.exp5.desc': 'Brand creation, product development and budget management.',
+                'experience.exp5.location': 'Salvador, Brazil',
+                'experience.exp6.date': 'May 2019 – May 2022',
+                'experience.exp6.company': 'Gerdau',
+                'experience.exp6.position': 'Sales Specialist',
+                'experience.exp6.desc': 'Portfolio management, customer relationship and target achievement.',
+                'experience.exp6.location': 'Salvador, Brazil',
+                'experience.exp7.date': 'Nov 2015 – Apr 2019',
+                'experience.exp7.company': 'Gerdau',
+                'experience.exp7.position': 'Analyst',
+                'experience.exp7.desc': 'Administrative processes, auditing, purchasing and safety.',
+                'experience.exp7.location': 'Salvador, Brazil',
+                'experience.exp8.date': 'Jan 2014 – Jan 2015',
+                'experience.exp8.company': 'Unilever',
+                'experience.exp8.position': 'Internship',
+                'experience.exp8.desc': 'Sales performance analysis and price research.',
+                'experience.exp8.location': 'Salvador, Brazil',
+                'experience.exp9.date': 'Feb 2013 – Aug 2013',
+                'experience.exp9.company': 'Shopping Barra',
+                'experience.exp9.position': 'Internship',
+                'experience.exp9.desc': 'Administrative support and customer service.',
+                'experience.exp9.location': 'Salvador, Brazil',
+                'experience.exp10.date': 'Sep 2011 – Dec 2013',
+                'experience.exp10.company': 'AIESEC Brazil',
+                'experience.exp10.position': 'Volunteer',
+                'experience.exp10.desc': 'Social impact projects and multicultural events.',
+                'experience.exp10.location': 'Salvador, Brazil',
+                'experience.exp11.date': 'Sep 2012 – Dec 2012',
+                'experience.exp11.company': 'Outback Steakhouse',
+                'experience.exp11.position': 'Attendant',
+                'experience.exp11.desc': 'Customer service in a high-volume environment.',
+                'experience.exp11.location': 'Salvador, Brazil',
+
+                'contact.title': 'Contact Me',
+                'contact.subtitle': 'I\'m available for opportunities and projects. Let\'s talk!',
+                'contact.email': 'Email',
+                'contact.phone': 'Phone',
+                'contact.location': 'Location',
+                'contact.message': 'Always open to discussing new projects, creative opportunities or partnerships.',
+                'contact.certificatesBtn': 'View my certificates',
+                'contact.form.name': 'Name',
+                'contact.form.email': 'Email',
+                'contact.form.subject': 'Subject',
+                'contact.form.message': 'Message',
+                'contact.form.submit': 'Send Message',
+
+                'footer.rights': 'All rights reserved.',
+                'cv.download': 'Download CV'
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        function detectLanguage() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) return savedLang;
+            const browserLang = navigator.language || navigator.userLanguage;
+            return browserLang.startsWith('pt') ? 'pt-BR' : 'en';
+        }
+
+        const currentLang = detectLanguage();
+        setLanguage(currentLang);
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+                    if (this.closest('.nav-links')) this.classList.add('active');
+                }
+            });
+        });
+
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) navLinks.classList.remove('active');
+            });
+        });
+
+        // Form
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (currentLang === 'pt-BR' ? 'Enviando...' : 'Sending...');
+                submitBtn.disabled = true;
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                    alert(currentLang === 'pt-BR' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!');
+                    contactForm.reset();
+                }, 1500);
+            });
+        }
+
+        // Scroll behaviors
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const header = document.getElementById('header');
+            const backToTop = document.querySelector('.back-to-top');
+
+            if (window.scrollY > 50) header.classList.add('header-scrolled');
+            else header.classList.remove('header-scrolled');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 120)) current = section.getAttribute('id');
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) link.classList.add('active');
+            });
+
+            if (window.scrollY > 500) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+
+        // Simple appear animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.skill-card, .project-card, .timeline-content, .contact-card');
+            elements.forEach(element => {
+                const pos = element.getBoundingClientRect().top;
+                const screen = window.innerHeight / 1.2;
+                if (pos < screen) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                } else {
+                    element.style.opacity = '0.9';
+                    element.style.transform = 'translateY(8px)';
+                }
+            });
+        };
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Project filters visual only
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
